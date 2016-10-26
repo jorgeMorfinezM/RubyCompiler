@@ -1,0 +1,457 @@
+puts		 Palabra reservada 
+"Hello World in Ruby"		 Cadena 
+;		 delimitador 
+class		 Palabra reservada 
+pajaro		 Identificador 
+def		 Palabra reservada 
+asear		 Identificador 
+print		 Palabra reservada 
+"Me estoy limpiando las plumas"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+def		 Palabra reservada 
+vuela		 Identificador 
+print		 Palabra reservada 
+"estoy volando"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+class		 Palabra reservada 
+PinguinoPajaro		 Identificador 
+def		 Palabra reservada 
+vuela		 Identificador 
+print		 Palabra reservada 
+"lo siento, yo solo nado"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+class		 Palabra reservada 
+Greeter		 Identificador 
+def		 Palabra reservada 
+initialize		 Identificador 
+(		 parentesis izquierdo 
+name		 Identificador 
+)		 parentesis derecho 
+name		 Identificador 
+=		 Operador aritmetico 
+name.capitalize		 Llamado 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+def		 Palabra reservada 
+salute		 Identificador 
+puts		 Palabra reservada 
+"Hello name "		 Cadena 
++		 Operador aritmetico 
+@name		 variable de instancia 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+g		 letra minuscula 
+=		 Operador aritmetico 
+Greeter.new		 Llamado 
+;		 delimitador 
+g.salute		 Llamado 
+;		 delimitador 
+puts		 Palabra reservada 
+"Como te llamas?"		 Cadena 
+;		 delimitador 
+name		 Identificador 
+=		 Operador aritmetico 
+gets.chomp		 Llamado 
+;		 delimitador 
+puts		 Palabra reservada 
+"Hola "		 Cadena 
++		 Operador aritmetico 
+name		 Identificador 
+;		 delimitador 
+print		 Palabra reservada 
+"El Tiempo en Ruby: "		 Cadena 
+;		 delimitador 
+print		 Palabra reservada 
+"Hoy es: "		 Cadena 
+;		 delimitador 
+hoy		 Identificador 
+=		 Operador aritmetico 
+Time.now		 Llamado 
+;		 delimitador 
+puts		 Palabra reservada 
+hoy		 Identificador 
+;		 delimitador 
+puts		 Palabra reservada 
+hoy.day		 Llamado 
+puts		 Palabra reservada 
+hoy.month		 Llamado 
+puts		 Palabra reservada 
+hoy.year		 Llamado 
+puts		 Palabra reservada 
+hoy.hour		 Llamado 
+puts		 Palabra reservada 
+hoy.min		 Llamado 
+puts		 Palabra reservada 
+hoy.sec		 Llamado 
+puts		 Palabra reservada 
+hoy.zone		 Llamado 
+itver		 Identificador 
+=		 Operador aritmetico 
+"Instituto Tecnologico de Veracruz"		 Cadena 
+;		 delimitador 
+puts		 Palabra reservada 
+itver		 Identificador 
+;		 delimitador 
+conta		 Identificador 
+=		 Operador aritmetico 
+0		 numero 
+;		 delimitador 
+conta2		 Identificador 
+=		 Operador aritmetico 
+5		 numero 
+;		 delimitador 
+print		 Palabra reservada 
+(		 parentesis izquierdo 
+'Estructura for en Ruby:'		 Cadena 
+)		 parentesis derecho 
+;		 delimitador 
+for		 Palabra reservada 
+i		 letra minuscula 
+in		 Palabra reservada 
+["a".."z"]		 Formato de arreglo con subrango 
+puts		 Palabra reservada 
+i		 letra minuscula 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+print		 Palabra reservada 
+(		 parentesis izquierdo 
+'Estructura While en Ruby:'		 Cadena 
+)		 parentesis derecho 
+;		 delimitador 
+while		 Palabra reservada 
+conta		 Identificador 
+<		 Operador relacional 
+conta2		 Identificador 
+conta2		 Identificador 
+=		 Operador aritmetico 
+conta		 Identificador 
++		 Operador aritmetico 
+conta2		 Identificador 
+;		 delimitador 
+conta		 Identificador 
++		 Operador aritmetico 
+=		 Operador aritmetico 
+conta		 Identificador 
+;		 delimitador 
+conta2		 Identificador 
+-		 Operador aritmetico 
+=		 Operador aritmetico 
+conta2		 Identificador 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+puts		 Palabra reservada 
+conta		 Identificador 
+;		 delimitador 
+puts		 Palabra reservada 
+conta2		 Identificador 
+;		 delimitador 
+def		 Palabra reservada 
+fact		 Identificador 
+(		 parentesis izquierdo 
+n		 letra minuscula 
+)		 parentesis derecho 
+if		 Palabra reservada 
+n		 letra minuscula 
+==		 Operador relacional 
+0		 numero 
+1		 numero 
+;		 delimitador 
+n		 letra minuscula 
+*		 Operador aritmetico 
+fact		 Identificador 
+(		 parentesis izquierdo 
+n		 letra minuscula 
+-1		 Numero Entero 
+)		 parentesis derecho 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+puts		 Palabra reservada 
+fact		 Identificador 
+(		 parentesis izquierdo 
+ARGV[0]		 Arreglo o vector 
+.		 punto 
+to_i		 Identificador 
+)		 parentesis derecho 
+;		 delimitador 
+def		 Palabra reservada 
+identidad		 Identificador 
+print		 Palabra reservada 
+"soy una persona mayor"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+puts		 Palabra reservada 
+"Ifs anidados en Ruby"		 Cadena 
+;		 delimitador 
+def		 Palabra reservada 
+tarifatren		 Identificador 
+(		 parentesis izquierdo 
+edad		 Identificador 
+=		 Operador aritmetico 
+0		 numero 
+)		 parentesis derecho 
+if		 Palabra reservada 
+(		 parentesis izquierdo 
+edad		 Identificador 
+<=		 Operador relacional 
+12		 Numero Entero 
+)		 parentesis derecho 
+print		 Palabra reservada 
+'tarifa reducida'		 Cadena 
+;		 delimitador 
+if		 Palabra reservada 
+(		 parentesis izquierdo 
+edad		 Identificador 
+==		 Operador relacional 
+0		 numero 
+)		 parentesis derecho 
+puts		 Palabra reservada 
+"no se cobra tarifa"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+else		 Palabra reservada 
+print		 Palabra reservada 
+"tarifa normal"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+print		 Palabra reservada 
+(		 parentesis izquierdo 
+'Estructura do en Ruby'		 Cadena 
+)		 parentesis derecho 
+;		 delimitador 
+conta3		 Identificador 
+=		 Operador aritmetico 
+0		 numero 
+;		 delimitador 
+conta4		 Identificador 
+=		 Operador aritmetico 
+0		 numero 
+;		 delimitador 
+loop		 Palabra reservada 
+do		 Palabra reservada 
+conta3		 Identificador 
+=		 Operador aritmetico 
+conta3		 Identificador 
++		 Operador aritmetico 
+conta4		 Identificador 
+;		 delimitador 
+conta3		 Identificador 
++		 Operador aritmetico 
+=		 Operador aritmetico 
+conta3		 Identificador 
+;		 delimitador 
+conta4		 Identificador 
+-		 Operador aritmetico 
+=		 Operador aritmetico 
+conta4		 Identificador 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+pusts		 Identificador 
+conta3		 Identificador 
+;		 delimitador 
+puts		 Palabra reservada 
+conta4		 Identificador 
+;		 delimitador 
+print		 Palabra reservada 
+(		 parentesis izquierdo 
+'Estructura case en Ruby'		 Cadena 
+)		 parentesis derecho 
+;		 delimitador 
+year		 Palabra reservada 
+=		 Operador aritmetico 
+2000		 Numero Entero 
+;		 delimitador 
+leap		 Palabra reservada 
+=		 Operador aritmetico 
+case		 Palabra reservada 
+when		 Palabra reservada 
+year		 Palabra reservada 
+%		 Operador aritmetico 
+400		 Numero Entero 
+==		 Operador relacional 
+0		 numero 
+then		 Palabra reservada 
+true		 Palabra reservada 
+;		 delimitador 
+when		 Palabra reservada 
+year		 Palabra reservada 
+%		 Operador aritmetico 
+100		 Numero Entero 
+==		 Operador relacional 
+0		 numero 
+then		 Palabra reservada 
+false		 Palabra reservada 
+;		 delimitador 
+else		 Palabra reservada 
+year		 Palabra reservada 
+%		 Operador aritmetico 
+4		 numero 
+==		 Operador relacional 
+0		 numero 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+puts		 Palabra reservada 
+leap		 Palabra reservada 
+;		 delimitador 
+def		 Palabra reservada 
+constModule		 Identificador 
+(		 parentesis izquierdo 
+pi		 Identificador 
+=		 Operador aritmetico 
+3.1416		 Numero decimal 
+,		 coma 
+str		 Identificador 
+=		 Operador aritmetico 
+"hola"		 Cadena 
+)		 parentesis derecho 
+puts		 Palabra reservada 
+pi		 Identificador 
++		 Operador aritmetico 
+" "		 Cadena 
++		 Operador aritmetico 
+str		 Identificador 
+;		 delimitador 
+print		 Palabra reservada 
+c		 letra minuscula 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+def		 Palabra reservada 
+constants		 Identificador 
+print		 Palabra reservada 
+C1		 Identificador 
++		 Operador aritmetico 
+C2		 Identificador 
++		 Operador aritmetico 
+C3		 Identificador 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+class		 Palabra reservada 
+Progra		 Identificador 
+def		 Palabra reservada 
+materia		 Identificador 
+(		 parentesis izquierdo 
+calificacion		 Identificador 
+)		 parentesis derecho 
+if		 Palabra reservada 
+(		 parentesis izquierdo 
+calificacion		 Identificador 
+>=		 Operador relacional 
+70		 Numero Entero 
+)		 parentesis derecho 
+print		 Palabra reservada 
+"soy una persona que pasa la materia"		 Cadena 
+;		 delimitador 
+else		 Palabra reservada 
+print		 Palabra reservada 
+"no paso la materia"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+class		 Palabra reservada 
+Novia		 Identificador 
+def		 Palabra reservada 
+tipo		 Identificador 
+(		 parentesis izquierdo 
+cuerpo		 Identificador 
+)		 parentesis derecho 
+if		 Palabra reservada 
+(		 parentesis izquierdo 
+cuerpo		 Identificador 
+>=		 Operador relacional 
+90		 Numero Entero 
+)		 parentesis derecho 
+print		 Palabra reservada 
+"anda con ella"		 Cadena 
+;		 delimitador 
+else		 Palabra reservada 
+print		 Palabra reservada 
+"buscate otra de tu tipo"		 Cadena 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+class		 Palabra reservada 
+Perro		 Identificador 
+def		 Palabra reservada 
+initialize		 Identificador 
+(		 parentesis izquierdo 
+raza		 Identificador 
+,		 coma 
+nombre		 Identificador 
+)		 parentesis derecho 
+@nombre		 variable de instancia 
+=		 Operador aritmetico 
+nombre		 Identificador 
+;		 delimitador 
+@raza		 variable de instancia 
+=		 Operador aritmetico 
+raza		 Identificador 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+de		 Identificador 
+saludar		 Identificador 
+puts		 Palabra reservada 
+"soy un perro de raza: "		 Cadena 
++		 Operador aritmetico 
+raza		 Identificador 
+;		 delimitador 
+puts		 Palabra reservada 
+"mi nombre es: "		 Cadena 
++		 Operador aritmetico 
+nombre		 Identificador 
+;		 delimitador 
+puts		 Palabra reservada 
+"Soy de raza: '		 Cadena 
++		 Operador aritmetico 
+@raza		 variable de instancia 
+' y mi nombre es: '		 Cadena 
++		 Operador aritmetico 
+@nombre		 variable de instancia 
+"		 Comillas dobles 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 
+conta3		 Identificador 
+=		 Operador aritmetico 
+4		 numero 
+;		 delimitador 
+conta4		 Identificador 
+=		 Operador aritmetico 
+5		 numero 
+;		 delimitador 
+end		 Palabra reservada o fin de instruccion 
+;		 delimitador 

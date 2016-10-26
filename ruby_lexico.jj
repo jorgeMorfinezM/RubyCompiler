@@ -1,0 +1,683 @@
+PARSER_BEGIN(ruby)
+  import java.io.*;
+  import java.lang.*;
+  import java.util.*;
+  import javax.swing.*;
+
+public class ruby{
+
+  public static  FileOutputStream Token1;
+  public static  DataOutputStream Token2;
+  static int linea;
+
+
+ public static void archtoken_crear(String nombre_arch)
+  {
+    try
+    {
+      Token1 = new FileOutputStream(nombre_arch);
+      Token2 = new DataOutputStream(Token1);
+    }
+    catch (IOException Ex)
+    {
+      System.err.println("No se creo el archivo correctamente");
+    }
+  }
+  public static void archtoken_cerrar()
+  {
+    try
+    {
+      Token1.close();
+    }
+    catch (IOException Ex)
+    {
+      System.err.println("No se cerro el archivo corectamente");
+    }
+   }
+  public static void archtoken_escribe(String Mensaje)
+  {
+    try
+    {
+      Token2.writeBytes(Mensaje+"\r");
+      Token1.write('\n');
+    }
+    catch(IOException Ex)
+    {
+      System.err.println("No se escribio en el archivo correctamente");
+    }
+   }
+ public static void main(String args[]) throws ParseException
+  {
+    ruby analiza;
+
+    if(args.length == 0)
+    {
+      System.err.println("Uso del programa: \"java ruby archivo.txt\"");
+    }
+    else
+    {
+         if(args.length == 1)
+      {
+        try
+        {
+          analiza = new ruby (new java.io.FileInputStream(args[0]));
+          analiza.archtoken_crear("Lexico.txt");
+          analiza.input(analiza);
+          analiza.ReInit(new java.io.FileInputStream(args[0]));
+
+          linea=1;
+          System.out.println("\n\n El numero de lineas es:   " + linea);
+
+        }
+        catch (java.io.FileNotFoundException e)
+        {
+          System.out.println("No se pudo leer el archivo :   " + args[0] + " ");
+          return;
+        }
+      }
+
+      else
+      {
+        System.err.println("Formato: java ruby archivo.txt");
+      }
+    }
+  }
+}
+PARSER_END(ruby)
+
+	SKIP:
+	{
+		"\t"
+		|"\r"
+		|" "
+		|"\n" {ruby.linea++;}
+	}
+
+	TOKEN:
+	{
+		<palias:("a")("l")("i")("a")("s")>
+		| <pbreak:("b")("r")("e")("a")("k")>
+		| <pcase:("c")("a")("s")("e")>
+		| <pclass:("c")("l")("a")("s")("s")>
+		| <pdef:("d")("e")("f")>
+		| <pdefined:("d")("e")("f")("i")("e")("d")("?") >
+		| <pdo:("d")("o")>
+		| <pelse: ("e")("l")("s")("e")>
+		| <pelsif: ("e")("l")("s")("i")("f")>
+		| <pend:("e")("n")("d")>
+		| <pensure:("e")("n")("s")("u")("r")("e")>
+		| <pfalse:("f")("a")("l")("s")("e")>
+		| <ptrue:("t")("r")("u")("e")>
+		| <pfor:("f")("o")("r")>
+		| <pif:("i")("f")>
+		| <pin:("i")("n")>
+		| <pmodule:("m")("o")("d")("u")("l")("e")>
+		| <pnext:("n")("e")("x")("t")>
+		| <pnew:("n")("e")("w")>
+		| <pcapitalize:("c")("a")("p")("i")("t")("a")("l")("i")("z")("e")>
+		| <pnil:("n")("i")("l")>
+		| <pretry:("r")("e")("t")("r")("y")>
+		| <preturn:("r")("e")("t")("u")("r")("n")>
+		| <pself:("s")("e")("l")("f")>
+		| <psuper:("s")("u")("p")("e")("r")>
+		| <pthen:("t")("h")("e")("n")>
+		| <pundef:("u")("n")("d")("e")("f")>
+		| <punless:("u")("n")("l")("e")("s")("s")>
+		| <puntil:("u")("n")("t")("i")("l")>
+		| <pwhen:("w")("h")("e")("n")>
+		| <pwhile:("w")("h")("i")("l")("e")>
+		| <pyield:("y")("i")("e")("l")("d")>
+		| <pputs:("p")("u")("t")("s")>
+		| <pprint:("p")("r")("i")("n")("t")>
+		| <pinicio:("b")("e")("g")("i")("n")>
+		| <pchomp:("c")("h")("o")("m")("p")>
+		| <pelseif:("e")("l")("s")("e")("i")("f")>
+		| <pleap:("l")("e")("a")("p")>
+		| <ploop:("l")("o")("o")("p")>
+		| <tiempo:("T")("i")("m")("e")>
+		| <ahora:("n")("o")("w")>
+		| <dia:("d")("a")("y")>
+		| <mes:("m")("o")("n")("t")("h")>
+		| <anio:("y")("e")("a")("r")>
+		| <hora:("h")("o")("u")("r")>
+		| <minuto:("m")("i")("n")>
+		| <segundo:("s")("e")("c")>
+		| <zona:("z")("o")("n")("e")>
+		| <pstring:("s")("t")("r")("i")("n")("g")>
+		| <pinteger:("i") ("n")("t")("e")("g")("e")("r")>
+		| <pboolean: ("b")("o")("o")("l")("e")("a")("n")>
+		| <preal:("r")("e")("a")("l")>
+		| <prational:("r")("a")("t")("i")("o")("n")("a")("l")>
+		| <pchar:("c")("h")("a")("r")>
+		| <pvar:("v")("a")("r")>
+		| <pconst:("c")("o")("n")("s")("t")>
+		| <parray:("a")("r")("r")("a")("y")>
+		| <peach:("e")("a")("c")("h")>
+		| <pitem:("i")("t")("e")("m")>
+	}
+
+	TOKEN:
+	{
+		<Suma:("+")>
+		| <Resta:("-")>
+		| <Multip:("*")>
+		| <Division:("/")>
+		| <Mod:("%")>
+		| <asignacion:("=")>
+		
+	}
+
+	TOKEN:
+	{
+		<Not:("n")("o")("t")>
+		| <And:("a")("n")("d")>
+		| <Or:("o")("r")>
+		| <XOr:("x")("o")("r")>
+	}
+
+	TOKEN:
+	{
+		<Igual:("==")>
+		| <Desigualdad:("<>")>
+		| <MayQue:(">")>
+		| <MenQue:("<")>
+		| <MayIgual:(">=")>
+		| <MenIgual:("<=")>
+		| <Pertenencia:("i")("n")>
+	}
+	
+	TOKEN:
+	{
+		<parenizq:"(">
+		| <parender:")">
+		| <llaveizq:"{">
+		| <llaveder:"}">
+		| <corizq:"[">
+		| <corder:"]">
+		| <puncoma:";">
+		| <dospuntos:":">
+		| <coma:",">
+		| <punto:".">
+		| <subrango:"..">
+	}
+	
+	TOKEN:
+	{
+		<apostrofo:("\'")>
+		| <puntero:("@")>
+		| <pesos:("$")>
+		| <comilla:("\"")>
+		| <letramayus: ["A"-"Z"]>
+		| <letraminus: ["a"-"z"]>
+		| <letras: ["A"-"Z", "a"-"z"]>
+		| <digito: ["0"-"9"]>
+		| <caracter:<apostrofo>(<letras>)*<apostrofo>>
+		| <cad:(<comilla>|<apostrofo>)+((<letras>)*|("?")|(" ")|<coma>|<puncoma>|<punto>|("¿")|("#")|("+")|("*")|("~")|("%")|("=")|("{")|("}")|("!")|("¡")|<corizq>|<corder>|<dospuntos>|<entero>)*(<comilla>|<apostrofo>)+>
+        | <formato: <corizq>((<digito>)+|<caracter>|<cad>)<corder>>
+		| <formato_sub: <corizq>(((<digito>)+<subrango>(<digito>)+)|(<caracter><subrango><caracter>)|(<cad><subrango><cad>))<corder>>
+		| <entero:("-")?(["0"-"9"])+>
+		| <decim:("-")?<entero>(".")<entero>>
+		| <ident: <letras>(<letras>|<digito>|"_")*>
+		| <arreglo_uni:(<formato><ident>)|(<formato_sub><ident>)|(<ident><formato>)|(<ident><formato_sub>)>
+		| <arreglo_bid:((<formato>)+<ident>)|((<formato_sub>)+<ident>)>
+		| <llamado: <ident><punto>(<ident>|<pnew>|<pchomp>|<pcapitalize>|<peach>)+>
+		| <cad_noval:((<letras>)|(<digito>)|("_"))*(("&")|("ñ")|("º")|("$")|("^"))+((["A"-"Z","a"-"z"])|(["0"-"9"])|("_")|(("&")|("ñ")|("º")|("$")|("^")))*>
+		| <sharp_coment:("#")>
+		| <variable_instancia: <puntero><ident>>
+		| <variable_local:(<letraminus>)+(<letras>)*>
+		| <variable_global:<pesos><ident>>
+		| <constante:(<letramayus>)+(<letras>)*>
+	}
+
+void input(ruby analiza):{String mensaje;}
+{
+   (mensaje=Checa()
+    {
+       analiza.archtoken_escribe(mensaje);
+       System.out.println(mensaje + "\n");
+    })+<EOF>
+}
+
+	String Checa():
+	{
+		Token t;  
+	}
+	{
+	  t=<palias>
+	   { 
+		 return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pbreak>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }
+	| t=<preturn>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }
+	| t=<pretry>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }
+	| t=<pself>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }  
+	| t=<psuper>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }  
+	| t=<pthen>
+      { 
+		return ( t.image +"\t\t Palabra reservada "); 
+	  }  
+	| t=<pinicio>
+       { 
+		 return ( t.image +"\t\t Inicio "); 
+	   }
+	| t=<peach>
+       { 
+		 return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pitem>
+       { 
+		 return ( t.image +"\t\t Elemento del arreglo "); 
+	   }
+	| t=<pelseif>
+       { 
+		 return ( t.image +"\t\t Palabra reservada "); 
+	   }   
+	| t=<pstring>
+       { 
+		 return ( t.image +"\t\t Tipo de dato "); 
+	   }
+	| t=<pconst>
+       { 
+		 return ( t.image +"\t\t Palabra reservada "); 
+	   }	   
+    | t=<pinteger>
+       { 
+		 return ( t.image +"\t\t Tipo de dato "); 
+	   }	   
+    | t=<preal>
+       { 
+	     return ( t.image +"\t\t Tipo de dato "); 
+	   }	   
+	| t=<prational>
+       { 
+		 return ( t.image +"\t\t Tipo de dato "); 
+	   }	   
+	| t=<pchar>
+       { 
+	     return ( t.image +"\t\t Tipo de dato "); 
+	   }	   
+	| t=<pvar>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }   
+	| t=<pboolean>
+       { 
+		 return ( t.image +"\t\t Tipo de dato "); 
+	   }
+	| t=<parray>
+       { 
+		 return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pcase>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pclass>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pdef>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pdefined>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pdo>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pelse>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pelsif>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pend>
+       { 
+	     return ( t.image +"\t\t Palabra reservada o fin de instruccion "); 
+	   }
+	| t=<pensure>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pfalse>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<ptrue>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pfor>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pif>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pin>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pnil>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pmodule>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pnext>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pundef>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<punless>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<puntil>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pwhen>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pwhile>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pyield>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pputs>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pprint>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pleap>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<ploop>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pnew>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pcapitalize>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<pchomp>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<tiempo>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+	| t=<ahora>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }   
+	| t=<dia>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }   
+	| t=<mes>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+    | t=<anio>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+    | t=<hora>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+    | t=<minuto>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+    | t=<segundo>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }
+    | t=<zona>
+       { 
+	     return ( t.image +"\t\t Palabra reservada "); 
+	   }	   
+	| t=<Suma>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+	| t=<Mod>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+	| t=<Resta>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+	| t=<Multip>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+	| t=<Division>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+    | t=<asignacion>
+       { 
+	     return ( t.image +"\t\t Operador aritmetico ");
+	   }
+
+	| t=<Not>
+       { 
+	     return ( t.image +"\t\t Operador logico ");
+	   }
+	| t=<And>
+       { 
+	     return ( t.image +"\t\t Operador logico ");
+	   }
+	| t=<Or>
+       { 
+	     return ( t.image +"\t\t Operador logico ");
+	   }
+	| t=<XOr>
+       { 
+	     return ( t.image +"\t\t Operador logico ");
+	   }
+	| t=<Igual>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<Desigualdad>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<MayQue>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<MenQue>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<MayIgual>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<MenIgual>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<Pertenencia>
+       { 
+	     return ( t.image +"\t\t Operador relacional ");
+	   }
+	| t=<parenizq>
+       { 
+	     return ( t.image +"\t\t parentesis izquierdo ");
+	   }
+	| t=<llaveizq>
+       { 
+	     return ( t.image +"\t\t llave izquierda ");
+	   }
+	| t=<llaveder>
+       { 
+	     return ( t.image +"\t\t llave derecha ");
+	   }
+    | t=<parender>
+       { 
+	     return ( t.image +"\t\t parentesis derecho ");
+	   }	   
+	| t=<corizq>
+       { 
+	     return ( t.image +"\t\t corchete izquierdo ");
+	   }
+	| t=<corder>
+       { 
+	     return ( t.image +"\t\t corchete derecho ");
+	   }
+	| t=<puncoma>
+       { 
+	     return ( t.image +"\t\t delimitador ");
+	   }
+	| t=<dospuntos>
+       { 
+	     return ( t.image +"\t\t dos puntos ");
+	   }
+	| t=<coma>
+       { 
+	     return ( t.image +"\t\t coma ");
+	   }
+	| t=<punto>
+       { 
+	     return ( t.image +"\t\t punto ");
+	   }
+	| t=<caracter>
+       { 
+	     return ( t.image +"\t\t Caracter "); 
+	   }
+	| t=<cad>
+       { 
+	     return ( t.image +"\t\t Cadena "); 
+	   }
+	| t=<comilla>
+       { 
+	     return ( t.image +"\t\t Comillas dobles "); 
+	   }
+	| t=<apostrofo>
+       { 
+	     return ( t.image +"\t\t Apostrofo "); 
+	   }
+	| t=<entero>
+       { 
+	     return ( t.image +"\t\t Numero Entero ");
+	   }
+	| t=<decim>
+       { 
+	     return ( t.image +"\t\t Numero decimal ");
+	   }
+	| t=<ident>
+       { 
+	     return ( t.image +"\t\t Identificador ");
+	   }
+	| t=<cad_noval>
+       { 
+	     return ( t.image +"\t\t Cadena no valida ");
+	   }
+	| t=<subrango>
+       { 
+	     return ( t.image +"\t\t subrango de elmentos ");
+	   }
+	| t=<sharp_coment>
+       { 
+	     return ( t.image +"\t\t sharp ");
+	   } 
+    | t=<variable_instancia>
+       { 
+	     return ( t.image +"\t\t variable de instancia ");
+	   } 
+    | t=<arreglo_uni>
+       { 
+	     return ( t.image +"\t\t Arreglo o vector ");
+	   } 	   
+	| t=<arreglo_bid>
+       { 
+	     return ( t.image +"\t\t Arreglo multidimencional ");
+	   } 
+	| t=<llamado>
+       { 
+	     return ( t.image +"\t\t Llamado ");
+	   } 
+	| t=<variable_local>
+       { 
+	     return ( t.image +"\t\t variable local ");
+	   }
+	| t=<letramayus>
+	{
+		return ( t.image +"\t\t letra mayúscula ");
+	}
+	| t=<letraminus>
+	{
+		return ( t.image +"\t\t letra minúscula ");
+	}
+	| t=<letras>
+	{
+		return ( t.image +"\t\t letra ");
+	}
+	| t=<digito>
+	{
+		return ( t.image +"\t\t numero ");
+	}
+	| t=<variable_global>
+	{
+		return ( t.image +"\t\t variable global ");
+	}
+	| t=<constante>
+	{
+		return ( t.image +"\t\t constante ");
+	}
+	| t=<formato>
+	{
+		return ( t.image +"\t\t Formato de arreglo ");
+	}
+	| t=<formato_sub>
+	{
+		return ( t.image +"\t\t Formato de arreglo con subrango ");
+	}
+}
