@@ -1,0 +1,23 @@
+Aplicación: Compilador del lenguaje Ruby™ Versión 1.0
+
+
+Copyright © Morfínez Mojica Jorge, Escamilla G. Vicente,
+Marcos Ramírez Jovany & García Almanza Irving Rafael.
+® Todos los derechos reservados.
+
+Aplicación controlada y supervizada por la
+Profra. Lic. Martínez Moreno Martha.
+
+
+Al usar este software/aplicación, todos los derechos quedan reservados.
+Esta versión de software es gratis- Trial-version Ruby v1.0
+
+Términos y condiciones generales:
+
+El uso, ejecución e instalación de la presente aplicación/software es responsabilidad del usuario final y no de sus creadores o de su supervisora, quedan reservados los derechos y garantías para el uso y distribución del Compilador Ruby v.1.0™.
+La programación del lenguaje Ruby queda deslindada de los desarrolladores de éste compilador.
+
+Prohibida su reproducción total o parcial.
+
+	Instituto Tecnológico de Veracruz
+      ' Antorcha y luz de fuego permanente '
